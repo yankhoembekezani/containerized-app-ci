@@ -1,6 +1,6 @@
-![Node.js version](https://img.shields.io/github/package-json/node/yankhoembekezani/node-base-app)
-[![License](https://img.shields.io/github/license/yankhoembekezani/bash-downloads-organizer)](https://github.com/yankhoembekezani/bash-downloads-organizer/blob/main/LICENSE)
-[![Maintained](https://img.shields.io/badge/Maintained-yes-brightgreen.svg)](https://github.com/yankhoembekezani/bash-downloads-organizer)
+![Node.js version](https://img.shields.io/github/package-json/node/yankhoembekezani/containerized-app-ci)
+[![License](https://img.shields.io/github/license/yankhoembekezani/containerized-app-ci)](https://github.com/yankhoembekezani/containerized-app-ci/blob/main/LICENSE)
+[![Maintained](https://img.shields.io/badge/Maintained-yes-brightgreen.svg)](https://github.com/yankhoembekezani/containerized-app-ci)
 
 ## Project Purpose
 A minimal Node.js application showcasing the base setup for future containerization and CI/CD workflows.
