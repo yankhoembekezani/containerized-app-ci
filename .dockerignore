@@ -1,0 +1,22 @@
+# Ignore node modules (install fresh inside container)
+app/node_modules
+npm-debug.log
+yarn-error.log
+
+# Ignore test files
+tests
+*.test.js
+coverage
+
+# Ignore docs & metadata
+README.md
+CHANGELOG.md
+LICENSE
+
+# Ignore Git & editor junk
+.git
+.gitignore
+.vscode
+.DS_Store
+*.swp
+
