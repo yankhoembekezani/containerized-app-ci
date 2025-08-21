@@ -7,7 +7,8 @@ A minimal Node.js application showcasing the base setup for future containerizat
 ## Stack / Tools
 - Node.js
 - Express
-- Docker
+- PostgreSQL
+- Docker & Docker Compose 
 - GitHub Actions (planned)
 
 ---
@@ -15,12 +16,15 @@ A minimal Node.js application showcasing the base setup for future containerizat
 ## Features (Current)
 - Minimal API returning JSON: "Hello World"
 - Runs locally with `npm start`
-- Containerized with Docker (build & run instructions below)
+- PostgreSQL integration with a `messages` table
+- Multi-container setup using Docker Compose (app+database)
+- Containerized app and database, running together
+- Health check endpoint (`/health`)
+- Database message endpoint (`/message`) retrieving stored messages
 
 ---
 
 ## Planned Features
-- Multi-container setup with Docker Compose
 - Automated tests
 - CI/CD pipeline with GitHub Actions
 - Live cloud deployment
@@ -45,18 +49,38 @@ A minimal Node.js application showcasing the base setup for future containerizat
    ```
 4. Access endpoint:
    - Root: `http://localhost:3000/`
+   - Health: `http://localhost;3000/health`
 
 ---
 
-## Run with Docker
-1. Build the Docker image
+## Run with Docker Compose
+1. Build and start all services
 ```
-   docker build -t containerized-app-ci:v0.1 .
+   docker compose up -d --build
 ```
-2. Run the container
+This will start
+   - app: Node.js backend on port 3000
+   - db: PostgreSQL database on port 5432
+2. Verify running containers:
 ```
-   docker run -d -p 3000:3000 containerized-app-ci:v0.1
+   docker compose ps
 ```
+**Expected Output**  
+![expected output](assets/expected_output.png)
+
+---
+ 
+## Verification
+
+- **App logs**  
+  ![App logs](assets/app_logs.png)
+
+- **Health check endpoint**  
+  ![Health check status](assets/health_endpoint_status.png)
+
+- **Database message endpoint**  
+  ![Message from database](assets/database_message_endpoint.png)
+
 App available at:
 http://localhost:3000/
 
@@ -67,9 +91,9 @@ http://localhost:3000/
 
 - Day 2: Dockerized Node.js app ✅
 
-- Day 3: Integrate a database (PostgreSQL) and extend functionality
+- Day 3: Integrate a database (PostgreSQL) and extend functionality ✅
 
-- Day 4: Use Docker Compose for multi-container setup (app + database)
+- Day 4: Use Docker Compose for multi-container setup (app + database) ✅
 
 - Day 5+: Testing, CI/CD pipelines, monitoring, and cloud deployment
 
@@ -77,8 +101,9 @@ http://localhost:3000/
 
 ## Folder Structure
 - `app/` – main application code (Node.js + Express)
+- `docker/` – Dockerfile and docker-compose.yml 
 - `tests/` – test files
-- `Dockerfile` – containerization setup
+- `assets/` – project resources
 - `README.md` – documentation
 - `LICENSE` – license details
 - `CHANGELOG.md` – project changes log
