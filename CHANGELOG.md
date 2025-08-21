@@ -8,11 +8,20 @@ This project follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) an
 
 ## [Unreleased]
 ### Added
-- Planned: Database integration (e.g., PostgreSQL or MongoDB)
-- Planned: Docker Compose setup for multi-service support
 - Planned: CI/CD pipeline with GitHub Actions
 - Planned: Automated test suite
 - Planned: Logging & monitoring enhancements
+- Planned: Cloud deployment
+
+---
+
+## v0.3.0 - 2025-08-21
+### Added
+- PostgreSQL database integration with `messages` table
+- Docker Compose setup for multi-service support (app + database)
+- Verification of database connection through `/message` endpoint
+- Health check endpoint `/health`
+- Updated documentation in README with database, Docker Compose, and verification instructions
 
 ---
 
